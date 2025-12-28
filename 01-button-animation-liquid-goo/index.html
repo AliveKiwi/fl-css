@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Buttons - Liquid Effect in CSS with SVG filters</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <h1>CSS Buttons - Liquid Effect in CSS with SVG filters</h1>
+    <div class="button">
+      <i class="fab fa-facebook-f"></i>
+      <div class="blurred">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <svg>
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 30 -15"
+            result="aab"
+          />
+          <feBlend in="SourceGraphic" in2="aab" />
+        </filter>
+      </defs>
+    </svg>
+  </body>
+</html>
